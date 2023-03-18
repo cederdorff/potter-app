@@ -1,7 +1,6 @@
 "use strict";
 
 // ============ Global Variables ============ //
-
 const potterName = "Harry Potter";
 const potterGender = "male";
 const potterHouse = "Gryffindor";
@@ -17,7 +16,6 @@ const potterAlive = true;
 const potterImage = "http://hp-api.herokuapp.com/images/harry.jpg";
 
 // ============ LOAD & INIT APP ============ //
-
 window.addEventListener("load", initApp);
 
 async function initApp() {
