@@ -37,9 +37,6 @@ function showCharacter(character) {
             </article>
         `
     );
-    // document
-    //     .querySelector("#characters article:last-child")
-    //     .addEventListener("click", () => showCharacterModal(character));
 
     document.querySelector("#characters article:last-child").addEventListener("click", characterClicked);
 
