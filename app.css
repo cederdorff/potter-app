@@ -5,7 +5,7 @@
     --light-grey: #f1f1f4;
     --text-color-light: #f1f1f1;
     --text-color-dark: #333;
-    --white: #f2f2f2;
+    --white: #f9f9f9;
     --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -54,11 +54,6 @@ header {
     background-color: var(--green);
     color: var(--text-color-light);
     padding: 1em;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
 }
 
 /* ---------- footer styling ---------- */
@@ -72,9 +67,8 @@ footer {
 
 /* ---------- main page styling ---------- */
 main {
-    background: var(--light-grey);
     animation: fadeIn 0.4s;
-    padding: 137px 0 0;
+    padding: 1em 0 0;
 }
 
 /* ---------- animations ---------- */
@@ -87,72 +81,6 @@ main {
     to {
         opacity: 1;
     }
-}
-
-/* ---------- grid container styling ---------- */
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1em;
-    padding: 1em;
-}
-
-@media (min-width: 600px) {
-    .grid-container {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (min-width: 992px) {
-    .grid-container {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-@media (min-width: 1200px) {
-    .grid-container {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-}
-@media (min-width: 1500px) {
-    .grid-container {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
-}
-
-.grid-container > article {
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
-    padding: 1.5em;
-    background-color: var(--white);
-    transition: 0.5s;
-    animation: fadeIn 0.5s;
-    cursor: pointer;
-}
-
-.grid-container > article:hover {
-    box-shadow: 0 8px 16px 0 var(--green);
-}
-
-.grid-container img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-}
-
-.grid-container p {
-    margin: 0.3em 0;
-}
-
-/* ---------- buttons in grid container ---------- */
-
-.grid-container .btns {
-    padding: 1em 0 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1em;
-}
-
-.grid-container .btns button {
-    width: 100%;
 }
 
 /* ---------- form styling ---------- */
@@ -217,4 +145,45 @@ dialog ul {
 }
 dialog p {
     margin: 0.5em 0 1em;
+}
+
+/* ---------- tabel styling ---------- */
+
+table {
+    border-collapse: collapse;
+    width: 75vw;
+    margin: auto;
+    background-color: var(--light-grey);
+}
+
+thead {
+    background-color: var(--green);
+    color: var(--text-color-light);
+    position: sticky;
+    top: 0;
+}
+
+td,
+th {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: var(--light-green);
+}
+
+tr {
+    cursor: pointer;
+    transition: 0.5s;
+    animation: fadeIn 0.5s;
+}
+
+tr:hover {
+    background-color: var(--green);
+    color: var(--text-color-light);
+}
+
+tr img {
+    max-width: 100px;
 }
