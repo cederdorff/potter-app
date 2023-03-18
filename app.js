@@ -27,21 +27,20 @@ function showCharacters(characterList) {
 }
 
 function showCharacter(character) {
-    document.querySelector("#characters").insertAdjacentHTML(
+    document.querySelector("tbody").insertAdjacentHTML(
         "beforeend",
         /*html*/ `
-            <article>
-                <img src="${character.image}">
-                <h2>${character.name}</h2>
-                <p>${character.house}</p>
-            </article>
+            <tr>
+                <td><img src="${character.image}"></td>
+                <td>${character.name}</td>
+                <td>${character.house}</td>
+                <td>${character.gender}</td>
+                <td>${character.yearOfBirth}</td>
+            </tr>
         `
     );
-    // document
-    //     .querySelector("#characters article:last-child")
-    //     .addEventListener("click", () => showCharacterModal(character));
 
-    document.querySelector("#characters article:last-child").addEventListener("click", characterClicked);
+    document.querySelector("tbody tr:last-child").addEventListener("click", characterClicked);
 
     function characterClicked() {
         showCharacterModal(character);
