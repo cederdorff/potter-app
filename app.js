@@ -14,7 +14,7 @@ const potterImage = "http://hp-api.herokuapp.com/images/harry.jpg";
 // ============ LOAD & INIT APP ============ //
 window.addEventListener("load", initApp);
 
-async function initApp() {
+function initApp() {
     showCharacter(potterImage, potterName, potterHouse, potterDateOfBirth, potterActor);
 }
 
