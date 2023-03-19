@@ -34,24 +34,28 @@ function initApp() {
 // }
 
 function showCharacter(image, name, house, dateOfBirth, actor) {
-    const characterElement = document.createElement("article");
+    //define elements
+    const articleElement = document.createElement("article");
     const imageElement = document.createElement("img");
     const nameElement = document.createElement("h2");
     const houseElement = document.createElement("p");
     const dateOfBirthElement = document.createElement("p");
     const actorElement = document.createElement("p");
 
+    // set content
     imageElement.src = image;
     nameElement.textContent = name;
     houseElement.textContent = house;
     dateOfBirthElement.textContent = `Date of Birth: ${dateOfBirth}`;
     actorElement.textContent = `Played by ${actor}`;
 
-    characterElement.appendChild(imageElement);
-    characterElement.appendChild(nameElement);
-    characterElement.appendChild(houseElement);
-    characterElement.appendChild(dateOfBirthElement);
-    characterElement.appendChild(actorElement);
+    // append child elements to articleElement
+    articleElement.appendChild(imageElement);
+    articleElement.appendChild(nameElement);
+    articleElement.appendChild(houseElement);
+    articleElement.appendChild(dateOfBirthElement);
+    articleElement.appendChild(actorElement);
 
-    document.querySelector("#characters").appendChild(characterElement);
+    // append article to grid
+    document.querySelector("#characters").appendChild(articleElement);
 }
