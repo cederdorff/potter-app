@@ -93,10 +93,10 @@ function showCharacter(character) {
 
 function showCharacterModal(character) {
     console.log(character);
+    //image, name and house
     document.querySelector("#dialog-image").src = character.image;
     document.querySelector("#dialog-title").textContent = character.name;
     document.querySelector("#dialog-house").textContent = character.house;
-
     // description
     let description = generateDescription(character);
     document.querySelector("#dialog-character-description").textContent = description;
