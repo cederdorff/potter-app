@@ -16,44 +16,44 @@ function initApp() {
     showCharacter("http://hp-api.herokuapp.com/images/ron.jpg", "Ron Weasley", "Gryffindor", "01-03-1980", "Rupert Grint");
 }
 
-// function showCharacter(image, name, house, dateOfBirth, actor) {
-//     document.querySelector("#characters").insertAdjacentHTML(
-//         "beforeend",
-//         /*html*/ `
-//             <article>
-//                 <img src="${image}">
-//                 <h2>${name}</h2>
-//                 <p>${house}</p>
-//                 <p>Date of Birth: ${dateOfBirth}</p>
-//                 <p>Played by ${actor}</p>
-//             </article>
-//         `
-//     );
-// }
-
 function showCharacter(image, name, house, dateOfBirth, actor) {
-    //define elements
-    const articleElement = document.createElement("article");
-    const imageElement = document.createElement("img");
-    const nameElement = document.createElement("h2");
-    const houseElement = document.createElement("p");
-    const dateOfBirthElement = document.createElement("p");
-    const actorElement = document.createElement("p");
-
-    // set content
-    imageElement.src = image;
-    nameElement.textContent = name;
-    houseElement.textContent = house;
-    dateOfBirthElement.textContent = `Date of Birth: ${dateOfBirth}`;
-    actorElement.textContent = `Played by ${actor}`;
-
-    // append child elements to articleElement
-    articleElement.appendChild(imageElement);
-    articleElement.appendChild(nameElement);
-    articleElement.appendChild(houseElement);
-    articleElement.appendChild(dateOfBirthElement);
-    articleElement.appendChild(actorElement);
-
-    // append article to grid
-    document.querySelector("#characters").appendChild(articleElement);
+    document.querySelector("#characters").insertAdjacentHTML(
+        "beforeend",
+        /*html*/ `
+            <article>
+                <img src="${image}">
+                <h2>${name}</h2>
+                <p>${house}</p>
+                <p>Date of Birth: ${dateOfBirth}</p>
+                <p>Played by ${actor}</p>
+            </article>
+        `
+    );
 }
+
+// function showCharacter(image, name, house, dateOfBirth, actor) {
+//     //define elements
+//     const articleElement = document.createElement("article");
+//     const imageElement = document.createElement("img");
+//     const nameElement = document.createElement("h2");
+//     const houseElement = document.createElement("p");
+//     const dateOfBirthElement = document.createElement("p");
+//     const actorElement = document.createElement("p");
+
+//     // set content
+//     imageElement.src = image;
+//     nameElement.textContent = name;
+//     houseElement.textContent = house;
+//     dateOfBirthElement.textContent = `Date of Birth: ${dateOfBirth}`;
+//     actorElement.textContent = `Played by ${actor}`;
+
+//     // append child elements to articleElement
+//     articleElement.appendChild(imageElement);
+//     articleElement.appendChild(nameElement);
+//     articleElement.appendChild(houseElement);
+//     articleElement.appendChild(dateOfBirthElement);
+//     articleElement.appendChild(actorElement);
+
+//     // append article to grid
+//     document.querySelector("#characters").appendChild(articleElement);
+// }
