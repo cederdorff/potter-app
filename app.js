@@ -6,16 +6,14 @@ window.addEventListener("load", initApp);
 function initApp() {
     // Harry Potter
     const potterName = "Harry Potter";
-    const potterGender = "male";
     const potterHouse = "Gryffindor";
     const potterDateOfBirth = "31-07-1980";
-    const potterAncestry = "half-blood";
-    const potterEyeColour = "green";
-    const potterHairColour = "black";
     const potterActor = "Daniel Radcliffe";
     const potterImage = "http://hp-api.herokuapp.com/images/harry.jpg";
 
     showCharacter(potterImage, potterName, potterHouse, potterDateOfBirth, potterActor);
+    showCharacter("http://hp-api.herokuapp.com/images/hermione.jpeg", "Hermione Granger", "Gryffindor", "19-09-1979", "Emma Watson");
+    showCharacter("http://hp-api.herokuapp.com/images/ron.jpg", "Ron Weasley", "Gryffindor", "01-03-1980", "Rupert Grint");
 }
 
 // function showCharacter(image, name, house, dateOfBirth, actor) {
