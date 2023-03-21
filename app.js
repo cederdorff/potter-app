@@ -20,7 +20,7 @@ function showCharacter(image, name, house, dateOfBirth, actor) {
     document.querySelector("#characters").insertAdjacentHTML(
         "beforeend",
         /*html*/ `
-            <article>
+            <article class="grid-item">
                 <img src="${image}">
                 <h2>${name}</h2>
                 <p>${house}</p>
