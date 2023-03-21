@@ -84,31 +84,47 @@ function showCharacter(character) {
             </article>
         `
     );
+    document.querySelector("#characters article:last-child").addEventListener("click", characterClicked);
+
+    function characterClicked() {
+        showCharacterModal(character);
+    }
 }
 
-// function showCharacter(character) {
-//     //define elements
-//     const articleElement = document.createElement("article");
-//     const imageElement = document.createElement("img");
-//     const nameElement = document.createElement("h2");
-//     const houseElement = document.createElement("p");
-//     const dateOfBirthElement = document.createElement("p");
-//     const actorElement = document.createElement("p");
+function showCharacterModal(character) {
+    console.log(character);
+    document.querySelector("#dialog-image").src = character.image;
+    document.querySelector("#dialog-title").textContent = character.name;
+    document.querySelector("#dialog-house").textContent = character.house;
 
-//     // set content
-//     imageElement.src = character.image;
-//     nameElement.textContent = character.name;
-//     houseElement.textContent = character.house;
-//     dateOfBirthElement.textContent = `Date of Birth: ${character.dateOfBirth}`;
-//     actorElement.textContent = `Played by ${character.actor}`;
+    // description
+    let description = generateDescription(character);
+    document.querySelector("#dialog-character-description").textContent = description;
 
-//     // append child elements to articleElement
-//     articleElement.appendChild(imageElement);
-//     articleElement.appendChild(nameElement);
-//     articleElement.appendChild(houseElement);
-//     articleElement.appendChild(dateOfBirthElement);
-//     articleElement.appendChild(actorElement);
+    document.querySelector("#dialog-gender").textContent = character.gender;
+    document.querySelector("#dialog-birth-date").textContent = character.dateOfBirth;
+    document.querySelector("#dialog-eye-color").textContent = character.eyeColour;
+    document.querySelector("#dialog-hair-color").textContent = character.hairColour;
+    document.querySelector("#dialog-ancestry").textContent = character.ancestry;
+    document.querySelector("#dialog-species").textContent = character.species;
 
-//     // append article to grid
-//     document.querySelector("#characters").appendChild(articleElement);
-// }
+    document.querySelector("#dialog-name").textContent = character.name;
+    document.querySelector("#dialog-actor-name").textContent = character.actor;
+
+    // show dialog
+    document.querySelector("#dialog-character").showModal();
+}
+
+function generateDescription(character) {
+    let description = "";
+    if (character.hogwartsStaff && character.alive) {
+        description = `${character.name} is employed at Hogwarts.`;
+    } else if (character.hogwartsStaff && !character.alive) {
+        description = `${character.name} was employed at Hogwarts but is no longer alive.`;
+    } else if (character.hogwartsStudent && character.alive) {
+        description = `${character.name} is a student at Hogwarts.`;
+    } else if (character.hogwartsStudent && !character.alive) {
+        description = `${character.name} was a student at Hogwarts but is no longer alive.`;
+    }
+    return description;
+}
