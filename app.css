@@ -144,6 +144,11 @@ main {
     margin: 0.3em 0;
 }
 
+.grid-item.gryffindor {
+    background-color: #ae0001;
+    color: #eeba30;
+}
+
 /* ---------- buttons in grid container ---------- */
 
 .grid-container .btns {
@@ -161,7 +166,6 @@ main {
 /* input form styling */
 form {
     margin: 2em auto 0;
-    background-color: var(--light-green);
     padding: 1em 1em 2em;
     text-align: center;
 }
@@ -199,6 +203,15 @@ dialog {
     background-color: var(--light-green);
     width: 65vw;
     padding: 2em 1em;
+}
+
+dialog[data-theme="gryffindor"] {
+    background-color: #740001;
+    color: #eeba30;
+}
+
+dialog[data-theme="gryffindor"] button {
+    background-color: #d3a625;
 }
 
 dialog::backdrop {
