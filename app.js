@@ -30,7 +30,7 @@ function showCharacter(character) {
     document.querySelector("#characters").insertAdjacentHTML(
         "beforeend",
         /*html*/ `
-            <article class="grid-item">
+            <article class="grid-item ${character.house.toLowerCase()}">
                 <img src="${character.image}">
                 <h2>${character.name}</h2>
                 <p>${character.house}</p>
@@ -65,8 +65,11 @@ function showCharacterModal(character) {
     document.querySelector("#dialog-name").textContent = character.name;
     document.querySelector("#dialog-actor-name").textContent = character.actor;
 
+    const dialog = document.querySelector("dialog");
+    // set theme
+    dialog.setAttribute("data-theme", character.house.toLowerCase());
     // show dialog
-    document.querySelector("#dialog-character").showModal();
+    dialog.showModal();
 }
 
 function generateDescription(character) {
