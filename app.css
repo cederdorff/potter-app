@@ -173,7 +173,7 @@ tr:nth-child(even) {
     background-color: var(--light-green);
 }
 
-tr {
+tbody tr {
     cursor: pointer;
     transition: 0.5s;
     animation: fadeIn 0.5s;
