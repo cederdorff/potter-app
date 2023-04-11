@@ -181,9 +181,16 @@ tbody tr {
 
 tr:hover {
     background-color: var(--green);
-    color: var(--text-color-light);
 }
 
 tr img {
     max-width: 100px;
+}
+
+.th-sort-by {
+    cursor: pointer;
+}
+
+.th-sort-by:hover {
+    color: var(--light-green);
 }

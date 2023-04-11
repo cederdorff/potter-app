@@ -1,12 +1,27 @@
 "use strict";
 
+let characters;
+
 // ============ LOAD & INIT APP ============ //
 
 window.addEventListener("load", initApp);
 
 async function initApp() {
-    const characters = await getCharacters();
+    characters = await getCharacters();
     showCharacters(characters);
+
+    document
+        .querySelector("#sort-by-name")
+        .addEventListener("click", sortByName);
+    document
+        .querySelector("#sort-by-house")
+        .addEventListener("click", sortByHouse);
+    document
+        .querySelector("#sort-by-gender")
+        .addEventListener("click", sortByGender);
+    document
+        .querySelector("#sort-by-year-of-birth")
+        .addEventListener("click", sortByYearOfBirth);
 }
 
 // ============ READ ============ //
@@ -20,17 +35,50 @@ async function getCharacters() {
     return data;
 }
 
-// Create HTML and display all users from given list
-function showCharacters(characterList) {
-    characterList.sort(compareNames);
-    //loop through all users and create an article with content for each
-    for (const character of characterList) {
-        showCharacter(character);
-    }
+function sortByName() {
+    characters.sort(compareNames);
+    showCharacters(characters);
+}
+
+function sortByHouse() {
+    characters.sort(compareHouses);
+    showCharacters(characters);
+}
+
+function sortByGender() {
+    characters.sort(compareGender);
+    showCharacters(characters);
+}
+
+function sortByYearOfBirth() {
+    characters.sort(compareYearOfBirth);
+    showCharacters(characters);
 }
 
 function compareNames(character1, character2) {
     return character1.name.localeCompare(character2.name);
+}
+
+function compareHouses(character1, character2) {
+    return character1.house.localeCompare(character2.house);
+}
+
+function compareGender(character1, character2) {
+    return character1.gender.localeCompare(character2.gender);
+}
+
+function compareYearOfBirth(character1, character2) {
+    return character1.yearOfBirth - character2.yearOfBirth;
+}
+
+// Create HTML and display all users from given list
+function showCharacters(characterList) {
+    // reset tbody
+    document.querySelector("tbody").innerHTML = "";
+    //loop through all users and create an article with content for each
+    for (const character of characterList) {
+        showCharacter(character);
+    }
 }
 
 function showCharacter(character) {
