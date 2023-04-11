@@ -12,7 +12,9 @@ async function initApp() {
 // ============ READ ============ //
 // Read (GET) characters from json file located on GitHub
 async function getCharacters() {
-    const response = await fetch("https://raw.githubusercontent.com/cederdorff/dat-js/main/data/potter.json");
+    const response = await fetch(
+        "https://raw.githubusercontent.com/cederdorff/dat-js/main/data/potter.json"
+    );
     const data = await response.json();
     console.log(data);
     return data;
@@ -20,10 +22,15 @@ async function getCharacters() {
 
 // Create HTML and display all users from given list
 function showCharacters(characterList) {
+    characterList.sort(compareNames);
     //loop through all users and create an article with content for each
     for (const character of characterList) {
         showCharacter(character);
     }
+}
+
+function compareNames(character1, character2) {
+    return character1.name.localeCompare(character2.name);
 }
 
 function showCharacter(character) {
@@ -40,7 +47,9 @@ function showCharacter(character) {
         `
     );
 
-    document.querySelector("tbody tr:last-child").addEventListener("click", characterClicked);
+    document
+        .querySelector("tbody tr:last-child")
+        .addEventListener("click", characterClicked);
 
     function characterClicked() {
         showCharacterModal(character);
@@ -55,12 +64,16 @@ function showCharacterModal(character) {
 
     // description
     let description = generateDescription(character);
-    document.querySelector("#dialog-character-description").textContent = description;
+    document.querySelector("#dialog-character-description").textContent =
+        description;
 
     document.querySelector("#dialog-gender").textContent = character.gender;
-    document.querySelector("#dialog-birth-date").textContent = character.dateOfBirth;
-    document.querySelector("#dialog-eye-color").textContent = character.eyeColour;
-    document.querySelector("#dialog-hair-color").textContent = character.hairColour;
+    document.querySelector("#dialog-birth-date").textContent =
+        character.dateOfBirth;
+    document.querySelector("#dialog-eye-color").textContent =
+        character.eyeColour;
+    document.querySelector("#dialog-hair-color").textContent =
+        character.hairColour;
     document.querySelector("#dialog-ancestry").textContent = character.ancestry;
     document.querySelector("#dialog-species").textContent = character.species;
 
