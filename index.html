@@ -15,7 +15,21 @@
         <h1>Harry Potter Characters</h1>
     </header>
     <main>
-        <input type="search" id="input-search" placeholder="Search by name">
+        <section class="tools-grid">
+            <label for="select-filter-house">Filter by house:
+                <select id="select-filter-house">
+                    <option value="all" selected>All</option>
+                    <option value="Gryffindor">Gryffindor</option>
+                    <option value="Hufflepuff">Hufflepuff</option>
+                    <option value="Ravenclaw">Ravenclaw</option>
+                    <option value="Slytherin">Slytherin</option>
+                    <option value="">No House</option>
+                </select>
+            </label>
+            <input type="search" id="input-search" placeholder="Search by name">
+        </section>
+
+
         <table id="characters">
             <thead>
                 <tr>

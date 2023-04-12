@@ -28,6 +28,9 @@ async function initApp() {
     document
         .querySelector("#input-search")
         .addEventListener("search", searchByName);
+    document
+        .querySelector("#select-filter-house")
+        .addEventListener("change", filterByHouse);
 }
 
 // ============ READ ============ //
@@ -87,6 +90,22 @@ function searchByName() {
     }
 
     showCharacters(filteredCharacters);
+}
+
+function filterByHouse() {
+    const selectedHouse = this.value;
+    console.log(selectedHouse);
+
+    if (selectedHouse === "all") {
+        showCharacters(characters);
+    } else {
+        const filteredCharacters = characters.filter(checkHouse);
+
+        function checkHouse(character) {
+            return character.house === selectedHouse;
+        }
+        showCharacters(filteredCharacters);
+    }
 }
 
 // Create HTML and display all users from given list

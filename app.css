@@ -68,7 +68,6 @@ footer {
 /* ---------- main page styling ---------- */
 main {
     animation: fadeIn 0.4s;
-    padding: 1em 0 0;
 }
 
 /* ---------- animations ---------- */
@@ -193,4 +192,36 @@ tr img {
 
 .th-sort-by:hover {
     color: var(--light-green);
+}
+
+/* ---------- tools grid styling ---------- */
+
+.tools-grid {
+    background-color: var(--light-green);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    justify-items: center;
+}
+
+@media (min-width: 600px) {
+    .tools-grid {
+        grid-template-columns: 1fr 1fr;
+        width: 75vw;
+        margin: 1em auto;
+    }
+}
+
+.tools-grid label {
+    max-width: 350px;
+}
+
+/* ---------- custom select styling ---------- */
+select {
+    background-color: var(--green);
+    border: none;
+    color: var(--text-color-light);
+    padding: 1em;
+    margin: 1em;
+    max-width: 350px;
 }
