@@ -22,6 +22,12 @@ async function initApp() {
     document
         .querySelector("#sort-by-year-of-birth")
         .addEventListener("click", sortByYearOfBirth);
+    document
+        .querySelector("#input-search")
+        .addEventListener("keyup", searchByName);
+    document
+        .querySelector("#input-search")
+        .addEventListener("search", searchByName);
 }
 
 // ============ READ ============ //
@@ -69,6 +75,18 @@ function compareGender(character1, character2) {
 
 function compareYearOfBirth(character1, character2) {
     return character1.yearOfBirth - character2.yearOfBirth;
+}
+
+function searchByName() {
+    const searchString = this.value.toLowerCase();
+
+    const filteredCharacters = characters.filter(matchName);
+
+    function matchName(character) {
+        return character.name.toLowerCase().includes(searchString);
+    }
+
+    showCharacters(filteredCharacters);
 }
 
 // Create HTML and display all users from given list
